@@ -10,10 +10,13 @@ int main() {
         ll y, x; cin >> y >> x;
         ll res;
 
-        if (x % 2 == 1) {
-            res = x*x - y + 1;
+        ll m = max(y, x);
+        ll n = min(y, x);
+
+        if ((y < x and m % 2 == 0) or (x < y and m % 2 == 1)) {
+            res = (m - 1)*(m - 1) + n;
         } else {
-            res = y*y - x + 1;
+            res = m*m - n + 1;
         }
 
         cout << res << endl;
